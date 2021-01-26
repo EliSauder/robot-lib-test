@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'java-library'
     id 'edu.wpi.first.GradleRIO' version '2021.2.1'
 }
@@ -6,6 +7,11 @@ plugins {
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 group = 'org.frcnomad'
@@ -24,10 +30,20 @@ dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
 
     implementation wpi.deps.wpilib()
+    nativeZip wpi.deps.wpilibJni(wpi.platforms.roborio)
+    nativeDesktopZip wpi.deps.wpilibJni(wpi.platforms.desktop)
+
     implementation wpi.deps.vendor.java()
+    nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
+    nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
 }
 
 tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
 }
+
+// jar {
+//     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+//     manifest edu.wpi.first.gradlerio.GradleRIOPlugin.javaManifest(ROBOT_MAIN_CLASS)
+// }
