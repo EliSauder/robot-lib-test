@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.server.launchMode": "Standard",
     "files.exclude": {
@@ -17,7 +16,4 @@
         "lib/bin": true,
         "lib/build": true
     }
-=======
-    "java.configuration.updateBuildConfiguration": "automatic"
->>>>>>> 67b1bc8... feat: Started adding base lib
 }
