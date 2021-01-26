@@ -7,7 +7,6 @@ import java.util.function.BiConsumer;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.NetworkButton;
 
 public class NomadOperatorConsole {
@@ -25,6 +24,8 @@ public class NomadOperatorConsole {
     public static final Map<InputMappingEnum, NomadInputMap> inputEnumMap = new EnumMap<>(InputMappingEnum.class);
 
     private static Map<Integer, NomadMappedGenericHID> controllers = new HashMap<>();
+
+    private NomadOperatorConsole() {}
 
     static {
         for (int i = 0; i < MAX_CONTROLLERS; i++) {

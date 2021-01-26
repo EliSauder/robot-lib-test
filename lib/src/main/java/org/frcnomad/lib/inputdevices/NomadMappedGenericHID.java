@@ -6,7 +6,7 @@ public class NomadMappedGenericHID extends GenericHID {
 
     public static final NomadMappedGenericHID NONE_MAPPEDHID = new NomadMappedGenericHID(-1);
 
-    public InputMappingEnum map = null;
+    private InputMappingEnum map = null;
 
     public NomadMappedGenericHID(int port) {
         super(port);
