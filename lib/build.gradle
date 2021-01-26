@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven'
+    id 'edu.wpi.first.GradleRIO' version '2021.2.1'
 }
 
 repositories {
@@ -20,6 +21,8 @@ dependencies {
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
+    implementation wpi.deps.wpilib()
+    implementation wpi.deps.vendor.java()
 }
 
 tasks.named('test') {
