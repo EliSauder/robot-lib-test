@@ -28,4 +28,4 @@ pluginManagement {
 
 
 rootProject.name = 'robot-lib-test'
-include('lib')
+include 'lib'
