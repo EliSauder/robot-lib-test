@@ -1,6 +1,9 @@
 plugins {
     id 'java-library'
-    id 'edu.wpi.first.GradleRIO' version '2021.2.1'
+}
+
+repositories {
+    mavenCentral()
 }
 
 java {
@@ -14,13 +17,6 @@ dependencies {
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
-    api wpi.deps.wpilib()
-    //nativeZip wpi.deps.wpilibJni(wpi.platforms.roborio)
-    //nativeDesktopZip wpi.deps.wpilibJni(wpi.platforms.desktop)
-
-    api wpi.deps.vendor.java()
-    //nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
-    //nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
 }
 
 tasks.named('test') {
