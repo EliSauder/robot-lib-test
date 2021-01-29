@@ -110,8 +110,6 @@ public class NomadVictorSPX extends WPI_VictorSPX implements INomadBaseMotor {
         }
     }
 
-
-    @SuppressWarnings("unchecked")
     public INomadBaseMotor setLeader( INomadBaseMotor leader){
         manualFollowing = false;
         this.leader = leader;

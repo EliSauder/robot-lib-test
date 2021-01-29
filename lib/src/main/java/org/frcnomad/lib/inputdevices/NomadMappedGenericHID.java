@@ -34,12 +34,12 @@ public class NomadMappedGenericHID extends GenericHID {
     
     @Override
     public double getRawAxis(int id){
-        return NomadOperatorConsole.inputEnumMap.get(this.map).getRawAxis(id);
+        return NomadOperatorConsole.INPUT_ENUM_MAP.get(this.map).getRawAxis(id);
     }
 
     @Override
     public boolean getRawButton(int id){
-        return NomadOperatorConsole.inputEnumMap.get(this.map).getRawButton(id);
+        return NomadOperatorConsole.INPUT_ENUM_MAP.get(this.map).getRawButton(id);
     }
 
     public double getHIDRawAxis(int id) {

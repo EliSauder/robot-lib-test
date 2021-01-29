@@ -4,6 +4,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.logging.Logger;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -15,13 +16,11 @@ public class NomadOperatorConsole {
 
     public static final int MAX_CONTROLLERS = 5;
 
-    private static InputMappingEnum map;
-
     private static NetworkButton rescanButton;
 
     private static RunCommand rescanCommand;
 
-    public static final Map<InputMappingEnum, NomadInputMap> inputEnumMap = new EnumMap<>(InputMappingEnum.class);
+    public static final Map<InputMappingEnum, NomadInputMap> INPUT_ENUM_MAP = new EnumMap<>(InputMappingEnum.class);
 
     private static Map<Integer, NomadMappedGenericHID> controllers = new HashMap<>();
 
@@ -38,8 +37,7 @@ public class NomadOperatorConsole {
         rescanCommand = new RunCommand(() -> {
             // scan controllers
             SmartDashboard.putBoolean("Controller Rescan", false);
-            // TODO: Use Logger
-            System.out.println("Rescan Controllers");
+            Logger.getGlobal().info("Rescan Controllers");
         });
         rescanButton.whenPressed(rescanCommand);
     }
@@ -102,7 +100,7 @@ public class NomadOperatorConsole {
             }
         });
 
-        inputEnumMap.put(map.getMap(), map);
+        INPUT_ENUM_MAP.put(map.getMap(), map);
 
         return map;
     }
