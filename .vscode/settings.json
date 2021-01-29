@@ -2,18 +2,20 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.server.launchMode": "Standard",
     "files.exclude": {
+        "**/.factorypath": true,
+        "**/*~": true,
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "bin/": true,
+        "**/.gradle": true,
+        "**/.settings": true,
+        "**/build": true,
+        "**/bin": true,
         "**/.classpath": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true,
-        "**/*~": true,
-        "lib/bin": true,
-        "lib/build": true
+        "**/gradlew*": true,
+        "**/gradle/": true
     }
 }
